@@ -7,7 +7,9 @@ import java.util.Random;
  */
 public class Player {
     String name;
-
+    int atpRank;
+    GameEnum ge = GameEnum.Love;
+    int currentSet = 0;
     public String getName() {
         return name;
     }
@@ -16,11 +18,11 @@ public class Player {
         this.name = name;
     }
 
-    public String getAtpRank() {
+    public int getAtpRank() {
         return atpRank;
     }
 
-    public void setAtpRank(String atpRank) {
+    public void setAtpRank(int atpRank) {
         this.atpRank = atpRank;
     }
 
@@ -32,10 +34,17 @@ public class Player {
         this.ge = ge;
     }
 
-    String atpRank;
-    GameEnum ge = GameEnum.Love;
     public Player(String name){
         this.name = name;
         atpRank = (new Random()).nextInt(50);
     }
+
+	public int getCurrentSet() {
+		return currentSet;
+	}
+
+	public void setCurrentSet(int currentSet) {
+		this.currentSet = currentSet;
+	}
+    
 }
